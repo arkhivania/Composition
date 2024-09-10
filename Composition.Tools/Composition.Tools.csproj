@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="HelloTool\Views\" />
+    <ProjectReference Include="..\Composition.MVVM\Composition.MVVM.csproj" />
+    <ProjectReference Include="..\Composition.ClientBase\Composition.ClientBase.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Composition.MVVM\Composition.MVVM.csproj" />
-    <ProjectReference Include="..\Composition.ClientBase\Composition.ClientBase.csproj" />
+    <PackageReference Include="Autofac" Version="8.1.0" />
   </ItemGroup>
 
 </Project>
