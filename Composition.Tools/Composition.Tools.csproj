@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="HelloTool\Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Composition.MVVM\Composition.MVVM.csproj" />
+    <ProjectReference Include="..\Composition.ClientBase\Composition.ClientBase.csproj" />
+  </ItemGroup>
+
+</Project>
