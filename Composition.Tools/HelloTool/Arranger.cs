@@ -20,6 +20,8 @@ class Arranger(IComponentContext container) : IToolsPanelArrange, IMainViewArran
 
     public IEnumerable<IDisposable> ArrangeView(Grid grid)
     {
+        
+
         var view = container.Resolve<Views.HelloView>();
         grid.Children.Add(view);
         yield return new DisposeAction(() => grid.Children.Remove(view));

@@ -1,7 +1,5 @@
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using Composition.Tools.HelloTool.ViewModel;
 
 namespace Composition.Tools.HelloTool.Views;
