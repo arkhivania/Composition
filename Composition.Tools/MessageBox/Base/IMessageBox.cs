@@ -4,6 +4,6 @@ namespace Composition.Tools.MessageBox.Base;
 
 public interface IMessageBox
 {
-    void ShowMessage(string message);
-    bool? ShowQuestion(string question);
+    Task ShowMessage(string message);
+    Task<bool?> ShowQuestion(string question);
 }

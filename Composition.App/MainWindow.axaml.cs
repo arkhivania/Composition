@@ -4,34 +4,24 @@ using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Composition.ClientBase;
+using Composition.MVVM;
+using Composition.Tools.PanelView.Base;
 
 namespace Composition.App;
 
-public partial class MainWindow : Window
+public partial class MainWindow : Window, IComposition
 {
-    readonly List<IDisposable> disposables = new List<IDisposable>();
-    private readonly IToolsPanelArrange[] toolsPanelArrange;
-    private readonly IMainViewArrange[] mainViewArrange;
-
-    public MainWindow(IToolsPanelArrange[] toolsPanelArrange, IMainViewArrange[] mainViewArrange)
+    public MainWindow()
     {
         InitializeComponent();
-        this.toolsPanelArrange = toolsPanelArrange;
-        this.mainViewArrange = mainViewArrange;
     }
 
-    protected override void OnLoaded(RoutedEventArgs e)
-    {
-        base.OnLoaded(e);
-        foreach (var tpa in toolsPanelArrange.OrderBy(w => w.Order))
-            disposables.AddRange(tpa.ArrangeToolsPanel(stackPanel_Tools));
-    }
+    IDisposable? installedView;
 
-    protected override void OnUnloaded(RoutedEventArgs e)
+    public IDisposable SetupView(Control mainViewControl)
     {
-        base.OnUnloaded(e);
-        foreach (var d in disposables)
-            d.Dispose();
-        disposables.Clear();
+        installedView?.Dispose();
+        this.Content = mainViewControl;
+        return installedView = new DisposeAction(() => this.Content = null);
     }
 }

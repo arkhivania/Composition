@@ -1,7 +1,7 @@
 using System;
 using Avalonia.Controls;
 
-namespace Composition.ClientBase;
+namespace Composition.Tools.PanelView.Base;
 
 public interface IToolsPanelArrange
 {

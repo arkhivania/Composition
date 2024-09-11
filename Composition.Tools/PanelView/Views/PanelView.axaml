@@ -3,6 +3,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Composition.Tools.HelloTool.Views.HelloView">
-  <Button Content="Push me !!!" HorizontalAlignment="Stretch"/>
+             x:Class="Composition.Tools.PanelView.Views.PanelView">
+    <Grid ColumnDefinitions="*, 4, 3*">
+        <StackPanel Name="stackPanel_Tools" Grid.Column="0"/>
+        <GridSplitter Grid.Column="1" Background="Black" ResizeDirection="Columns"/>
+        <Grid Name="grid_MainView" Grid.Column="2"/>
+    </Grid>
 </UserControl>

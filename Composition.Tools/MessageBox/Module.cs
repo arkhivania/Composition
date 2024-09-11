@@ -5,11 +5,14 @@ namespace Composition.Tools.MessageBox;
 
 public class Module : Autofac.Module, Base.IMessageBox
 {
-    public void ShowMessage(string message) { }
-
-    public bool? ShowQuestion(string question)
+    public Task ShowMessage(string message)
     {
-        return null;
+        return Task.CompletedTask;
+    }
+
+    public Task<bool?> ShowQuestion(string question)
+    {
+        return Task.FromResult<bool?>(true);
     }
 
     protected override void Load(ContainerBuilder builder)
