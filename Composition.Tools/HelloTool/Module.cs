@@ -8,6 +8,7 @@ public class Module : Autofac.Module
     protected override void Load(ContainerBuilder builder)
     {
         builder.RegisterType<Views.HelloView>();
-        builder.RegisterType<Arranger>().As<IToolsPanelArrange>();
+        builder.RegisterType<ViewModel.HelloViewModel>().SingleInstance();
+        builder.RegisterType<Arranger>().As<IToolsPanelArrange, IMainViewArrange>();
     }
 }

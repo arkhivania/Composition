@@ -5,7 +5,7 @@ using Composition.Tools.PanelView.Base;
 
 namespace Composition.Tools.HelloTool;
 
-class Arranger(IComponentContext container) : IToolsPanelArrange
+class Arranger(IComponentContext container) : IToolsPanelArrange, IMainViewArrange
 {
     private readonly IComponentContext container = container;
 
@@ -16,5 +16,12 @@ class Arranger(IComponentContext container) : IToolsPanelArrange
         var view = container.Resolve<Views.HelloView>();
         stackPanel.Children.Add(view);
         yield return new DisposeAction(() => stackPanel.Children.Remove(view));
+    }
+
+    public IEnumerable<IDisposable> ArrangeView(Grid grid)
+    {
+        var view = container.Resolve<Views.HelloView>();
+        grid.Children.Add(view);
+        yield return new DisposeAction(() => grid.Children.Remove(view));
     }
 }

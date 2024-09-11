@@ -1,16 +1,15 @@
 using System;
 using Composition.ClientBase.MVVM;
-using Composition.Tools.MessageBox.Base;
 
 namespace Composition.Tools.HelloTool.ViewModel;
 
 class HelloViewModel
 {
-    public RelayCommand SayHelloCommand { get; }
+    public RelayCommand IncrementCommand { get; }
+    public StateValue<int> Counter { get; } = new StateValue<int>();
 
-    public HelloViewModel(IMessageBox messageBox)
+    public HelloViewModel()
     {
-        SayHelloCommand = new RelayCommand(() => messageBox.ShowMessage("Hello"));
+        IncrementCommand = new RelayCommand(() => Counter.Value += 1);
     }
-
 }

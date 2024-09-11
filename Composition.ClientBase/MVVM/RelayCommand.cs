@@ -12,11 +12,15 @@ public class RelayCommand : ICommand
         this.execute = execute;
         this.canExecute = canExecute;
     }
+
     public event EventHandler? CanExecuteChanged;
 
     public bool CanExecute(object? parameter)
     {
-        return canExecute?.Invoke() == true;
+        if (canExecute == null)
+            return true;
+
+        return canExecute();
     }
 
     public void Execute(object? parameter)

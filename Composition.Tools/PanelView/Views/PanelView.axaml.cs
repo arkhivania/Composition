@@ -23,6 +23,9 @@ partial class PanelView : UserControl
     {
         foreach (var tpa in toolsPanelArrange.OrderBy(w => w.Order))
             disposables.AddRange(tpa.ArrangeToolsPanel(stackPanel_Tools));
+        
+        foreach (var tpa in mainViewArrange.OrderBy(w => w.Order))
+            disposables.AddRange(tpa.ArrangeView(grid_MainView));
     }
 
     protected override void OnUnloaded(RoutedEventArgs e)
