@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace Composition.MVVM;
+namespace Composition.ClientBase.MVVM;
 
 public class RelayCommand : ICommand
 {

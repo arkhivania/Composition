@@ -1,5 +1,5 @@
 using System;
-using Composition.MVVM;
+using Composition.ClientBase.MVVM;
 using Composition.Tools.MessageBox.Base;
 
 namespace Composition.Tools.HelloTool.ViewModel;

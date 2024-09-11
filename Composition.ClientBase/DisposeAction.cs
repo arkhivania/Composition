@@ -1,6 +1,6 @@
 using System;
 
-namespace Composition.MVVM;
+namespace Composition.ClientBase;
 
 public class DisposeAction : IDisposable
 {

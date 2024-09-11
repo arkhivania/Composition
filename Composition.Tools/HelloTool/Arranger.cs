@@ -1,6 +1,6 @@
 using Autofac;
 using Avalonia.Controls;
-using Composition.MVVM;
+using Composition.ClientBase;
 using Composition.Tools.PanelView.Base;
 
 namespace Composition.Tools.HelloTool;

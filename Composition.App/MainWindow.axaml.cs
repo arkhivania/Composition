@@ -1,11 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Avalonia.Controls;
-using Avalonia.Interactivity;
 using Composition.ClientBase;
-using Composition.MVVM;
-using Composition.Tools.PanelView.Base;
 
 namespace Composition.App;
 
