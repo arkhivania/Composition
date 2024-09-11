@@ -34,6 +34,11 @@ public partial class App : Application
                 i.Initialize();
 
             desktop.MainWindow = mainWindow;
+
+            mainWindow.Unloaded += delegate
+            {
+                container.Dispose();
+            };
         }
 
         base.OnFrameworkInitializationCompleted();
