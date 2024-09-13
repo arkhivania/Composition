@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Autofac;
 
 namespace Composition.App;
 
@@ -15,7 +16,9 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            var mainWindow = new MainWindow();
+            var mainWindow = new ClientBase.Common.CompositionWindow(builder =>
+                builder.RegisterModule<Bootstraps.Demo1Module>()
+            );
 
             desktop.MainWindow = mainWindow;
         }

@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composition.Tools", "Compos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composition.ClientBase", "Composition.ClientBase\Composition.ClientBase.csproj", "{EAF8375D-7B15-4326-8F1D-5C6EAE8C25E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composition.Bootstraps", "Composition.Bootstraps\Composition.Bootstraps.csproj", "{B9269A40-ACE5-49C0-AE23-D4F6A23E0C1F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{EAF8375D-7B15-4326-8F1D-5C6EAE8C25E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAF8375D-7B15-4326-8F1D-5C6EAE8C25E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAF8375D-7B15-4326-8F1D-5C6EAE8C25E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9269A40-ACE5-49C0-AE23-D4F6A23E0C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9269A40-ACE5-49C0-AE23-D4F6A23E0C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9269A40-ACE5-49C0-AE23-D4F6A23E0C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9269A40-ACE5-49C0-AE23-D4F6A23E0C1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

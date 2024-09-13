@@ -1,9 +1,9 @@
 using System;
 using Autofac;
 
-namespace Composition.Bootstraps.Demo1;
+namespace Composition.App.Bootstraps;
 
-public class Module : Autofac.Module
+public class Demo1Module : Autofac.Module
 {
     protected override void Load(ContainerBuilder builder)
     {
