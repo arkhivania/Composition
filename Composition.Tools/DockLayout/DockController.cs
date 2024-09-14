@@ -7,24 +7,18 @@ namespace Composition.Tools.DockLayout;
 
 public class DockController : IInitialize
 {
-    private readonly IComponentContext componentContext;
     private readonly IComposition composition;
     private readonly IDockInstaller[] dockInstallers;
 
-    public int InitializeOrder => 0;
+    public int Order => 0;
 
-    public DockController(
-        IComponentContext componentContext,
-        IComposition composition,
-        Base.IDockInstaller[] dockInstallers
-    )
+    public DockController(IComposition composition, IDockInstaller[] dockInstallers)
     {
-        this.componentContext = componentContext;
         this.composition = composition;
         this.dockInstallers = dockInstallers;
     }
 
-    public void Initialize()
+    Task IInitialize.Initialize()
     {
         var dockPanel = new Avalonia.Controls.DockPanel();
         var installations = dockInstallers.SelectMany(w => w.DockInstall());
@@ -38,5 +32,6 @@ public class DockController : IInitialize
         }
 
         composition.SetupView(dockPanel);
+        return Task.CompletedTask;
     }
 }

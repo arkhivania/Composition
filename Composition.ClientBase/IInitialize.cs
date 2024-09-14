@@ -4,6 +4,6 @@ namespace Composition.ClientBase;
 
 public interface IInitialize
 {
-    int InitializeOrder { get; }
-    void Initialize();
+    int Order { get; }
+    Task Initialize();
 }

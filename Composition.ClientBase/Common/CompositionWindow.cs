@@ -1,6 +1,7 @@
 using Autofac;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Threading;
 
 namespace Composition.ClientBase.Common;
 
@@ -16,7 +17,7 @@ public class CompositionWindow : Window, IComposition
         this.builderInitializer = builderInitializer;
     }
 
-    protected override void OnLoaded(RoutedEventArgs e)
+    protected override async void OnLoaded(RoutedEventArgs e)
     {
         base.OnLoaded(e);
 
@@ -24,12 +25,9 @@ public class CompositionWindow : Window, IComposition
         builder.RegisterInstance(this).As<IComposition>();
         this.builderInitializer(builder);
 
-        var container = builder.Build();
-
-        foreach (
-            var i in container.Resolve<IEnumerable<IInitialize>>().OrderBy(w => w.InitializeOrder)
-        )
-            i.Initialize();
+        this.container = builder.Build();
+        foreach (var i in this.container.Resolve<IEnumerable<IInitialize>>().OrderBy(w => w.Order))
+            await i.Initialize();
     }
 
     protected override void OnUnloaded(RoutedEventArgs e)

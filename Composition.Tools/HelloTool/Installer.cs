@@ -5,9 +5,9 @@ using Composition.Tools.DockLayout.Base;
 
 namespace Composition.Tools.HelloTool;
 
-class Installer(IComponentContext container) : IDockInstaller
+class Installer(ViewModel.HelloViewModel helloViewModel) : IDockInstaller
 {
-    private readonly IComponentContext container = container;
+    private readonly ViewModel.HelloViewModel helloViewModel = helloViewModel;
 
     public int Order => 0;
 
@@ -15,7 +15,7 @@ class Installer(IComponentContext container) : IDockInstaller
     {
         yield return new DockInstallation
         {
-            Control = container.Resolve<Views.HelloView>(),
+            Control = new Views.HelloView(helloViewModel),
             Order = 0,
         };
     }
