@@ -9,6 +9,6 @@ public class Demo1Module : Autofac.Module
     {
         builder.RegisterModule(new Composition.Tools.DockLayout.Module());
         builder.RegisterModule(new Composition.Tools.MainMenu.Module());
-        builder.RegisterModule(new Composition.Tools.HelloTool.Module());
+        builder.RegisterModule(new Composition.Demo.HelloTool.Module());
     }
 }

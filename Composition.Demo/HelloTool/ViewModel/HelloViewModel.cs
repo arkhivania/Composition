@@ -1,9 +1,9 @@
 using System;
 using Composition.ClientBase.MVVM;
 
-namespace Composition.Tools.HelloTool.ViewModel;
+namespace Composition.Demo.HelloTool.ViewModel;
 
-class HelloViewModel : IDisposable
+class HelloViewModel
 {
     public RelayCommand IncrementCommand { get; }
     public StateValue<int> Counter { get; } = new StateValue<int>();
@@ -11,10 +11,5 @@ class HelloViewModel : IDisposable
     public HelloViewModel()
     {
         IncrementCommand = new RelayCommand(() => Counter.Value += 1);
-    }
-
-    public void Dispose()
-    {
-        
     }
 }

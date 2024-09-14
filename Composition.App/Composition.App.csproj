@@ -20,5 +20,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Composition.ClientBase\Composition.ClientBase.csproj" />
     <ProjectReference Include="..\Composition.Tools\Composition.Tools.csproj" />
+    <ProjectReference Include="..\Composition.Demo\Composition.Demo.csproj" />
   </ItemGroup>
 </Project>

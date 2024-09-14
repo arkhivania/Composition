@@ -1,14 +1,14 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Composition.Tools.HelloTool.ViewModel;
+using Composition.Demo.HelloTool.ViewModel;
 
-namespace Composition.Tools.HelloTool.Views;
+namespace Composition.Demo.HelloTool.Views;
 
 partial class HelloView : UserControl
 {
     private readonly HelloViewModel viewModel;
 
-    public HelloView(ViewModel.HelloViewModel viewModel)
+    public HelloView(HelloViewModel viewModel)
     {
         InitializeComponent();
         this.viewModel = viewModel;
@@ -17,12 +17,12 @@ partial class HelloView : UserControl
     protected override void OnLoaded(RoutedEventArgs e)
     {
         base.OnLoaded(e);
-        this.DataContext = viewModel;
+        DataContext = viewModel;
     }
 
     protected override void OnUnloaded(RoutedEventArgs e)
     {
         base.OnUnloaded(e);
-        this.DataContext = null;
+        DataContext = null;
     }
 }

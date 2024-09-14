@@ -1,16 +1,12 @@
-using Autofac;
-using Avalonia.Controls;
-using Composition.ClientBase;
+using Composition.Demo.HelloTool.ViewModel;
 using Composition.Tools.DockLayout.Base;
 using Composition.Tools.MainMenu.Base;
 
-namespace Composition.Tools.HelloTool;
+namespace Composition.Demo.HelloTool;
 
-class Installer(ViewModel.HelloViewModel helloViewModel)
-    : IDockInstaller,
-        MainMenu.Base.IMainMenuInstaller
+class Installer(HelloViewModel helloViewModel) : IDockInstaller, IMainMenuInstaller
 {
-    private readonly ViewModel.HelloViewModel helloViewModel = helloViewModel;
+    private readonly HelloViewModel helloViewModel = helloViewModel;
 
     public int Order => 0;
 
