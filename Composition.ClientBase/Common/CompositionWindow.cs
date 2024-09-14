@@ -42,9 +42,11 @@ public class CompositionWindow : Window, IComposition
 
     public IDisposable SetupView(Control mainViewControl)
     {
-        installedView?.Dispose();
+        if (this.installedView != null)
+            throw new InvalidOperationException("View already installed");
+
         this.Content = mainViewControl;
-        return installedView = new DisposeAction(() =>
+        return this.installedView = new DisposeAction(() =>
         {
             this.Content = null;
             this.installedView = null;

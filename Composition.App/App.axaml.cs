@@ -1,7 +1,7 @@
+using Autofac;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Autofac;
 
 namespace Composition.App;
 
@@ -18,7 +18,10 @@ public partial class App : Application
         {
             var mainWindow = new ClientBase.Common.CompositionWindow(builder =>
                 builder.RegisterModule<Bootstraps.Demo1Module>()
-            );
+            )
+            {
+                Title = "Composition demo application",
+            };
 
             desktop.MainWindow = mainWindow;
         }
