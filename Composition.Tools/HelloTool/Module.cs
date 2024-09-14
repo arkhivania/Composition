@@ -8,6 +8,8 @@ public class Module : Autofac.Module
     {
         builder.RegisterType<Views.HelloView>();
         builder.RegisterType<ViewModel.HelloViewModel>().SingleInstance();
-        builder.RegisterType<Installer>().As<DockLayout.Base.IDockInstaller>();
+        builder
+            .RegisterType<Installer>()
+            .As<DockLayout.Base.IDockInstaller, MainMenu.Base.IMainMenuInstaller>();
     }
 }
