@@ -7,6 +7,6 @@
 
     <Application.Styles>
         <!-- <themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Grey" SecondaryColor="Lime" /> -->
-        <FluentTheme />
+        <FluentTheme DensityStyle="Compact" />
     </Application.Styles>
 </Application>
