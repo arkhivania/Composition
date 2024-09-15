@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Composition.Tools.StatusBar.Views.StatusBarControl"
-             x:ClassModifier="internal" Background="Gray">
+             x:ClassModifier="internal">
   <ItemsControl ItemsSource="{Binding Sections}" VerticalAlignment="Center">
     <ItemsControl.ItemsPanel>
         <ItemsPanelTemplate>
@@ -14,10 +14,10 @@
 
     <ItemsControl.ItemTemplate>
       <DataTemplate>
-        <Border BorderBrush="LightGray"
+        <Border BorderBrush="{DynamicResource BorderMidBrush}"
               BorderThickness="2"
-              Padding="4" Margin="2">
-          <TextBlock Text="{Binding StatusText.Value, Mode=OneWay}" Foreground="White"/>
+              Padding="2" Margin="2">
+          <TextBlock Text="{Binding StatusText.Value, Mode=OneWay}"/>
         </Border>
       </DataTemplate>
     </ItemsControl.ItemTemplate>

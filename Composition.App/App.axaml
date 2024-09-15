@@ -6,7 +6,7 @@
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.Styles>
-        <themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Grey" SecondaryColor="Lime" />
-        <!-- <FluentTheme /> -->
+        <!-- <themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Grey" SecondaryColor="Lime" /> -->
+        <FluentTheme />
     </Application.Styles>
 </Application>
