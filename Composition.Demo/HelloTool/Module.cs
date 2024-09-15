@@ -13,5 +13,8 @@ public class Module : Autofac.Module
         builder.RegisterType<HelloView>();
         builder.RegisterType<HelloViewModel>().SingleInstance();
         builder.RegisterType<Installer>().As<IDockInstaller, IMainMenuInstaller>();
+        builder
+            .RegisterType<SettingsProvider>()
+            .As<Composition.Tools.SettingsDisplay.Base.ISettingsUIProvider>();
     }
 }

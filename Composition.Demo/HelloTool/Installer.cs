@@ -15,7 +15,7 @@ class Installer(HelloViewModel helloViewModel) : IDockInstaller, IMainMenuInstal
         yield return new DockInstallation
         {
             Control = new Views.HelloView(helloViewModel),
-            Order = 0,
+            Order = 1000,
         };
     }
 

@@ -50,4 +50,20 @@ public class CompositionWindow : Window, IComposition
             this.installedView = null;
         });
     }
+
+    public async Task ShowDialogWindow(
+        Control control,
+        DialogWindowSettings settings
+    )
+    {
+        var window = new Window()
+        {
+            Width = settings.Width,
+            Height = settings.Height,
+            Title = settings.Title,
+        };
+
+        window.Content = control;
+        await window.ShowDialog(this);
+    }
 }
