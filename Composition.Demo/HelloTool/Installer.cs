@@ -25,7 +25,7 @@ class Installer(HelloViewModel helloViewModel) : IDockInstaller, IMainMenuInstal
         {
             Command = helloViewModel.IncrementCommand,
             DisplayName = "Increment",
-            Location = "Operation",
+            Location = "Action",
         };
     }
 }
