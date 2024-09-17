@@ -94,7 +94,7 @@ class ShowSettingsPageController
 
         composition.ShowDialogWindow(
             verticalScrollPanel,
-            new DialogWindowSettings
+            new WindowSettings
             {
                 Width = 640,
                 Height = 480,

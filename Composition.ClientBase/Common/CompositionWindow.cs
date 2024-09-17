@@ -51,10 +51,7 @@ public class CompositionWindow : Window, IComposition
         });
     }
 
-    public async Task ShowDialogWindow(
-        Control control,
-        DialogWindowSettings settings
-    )
+    public async Task ShowDialogWindow(Control control, WindowSettings settings)
     {
         var window = new Window()
         {
@@ -65,5 +62,19 @@ public class CompositionWindow : Window, IComposition
 
         window.Content = control;
         await window.ShowDialog(this);
+    }
+
+    public Window ShowWindow(Control control, WindowSettings settings)
+    {
+        var window = new Window()
+        {
+            Width = settings.Width,
+            Height = settings.Height,
+            Title = settings.Title,
+        };
+
+        window.Content = control;
+        window.Show(this);
+        return window;
     }
 }

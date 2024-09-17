@@ -19,6 +19,8 @@ public class Demo1Module : Autofac.Module
         builder.RegisterModule(new Composition.Tools.StatusBar.Module());
         builder.RegisterModule(new Composition.Tools.SettingsDisplay.Module());
         builder.RegisterModule(new Composition.Tools.SettingsStore.Module());
+        builder.RegisterModule(new Composition.Tools.Logs.Module());
+        builder.RegisterModule(new Composition.Tools.LogsDisplay.Module());
 
         builder.RegisterModule(new Composition.Demo.HelloTool.Module());
     }
